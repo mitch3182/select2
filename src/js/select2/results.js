@@ -276,7 +276,9 @@ define([
       }
 
       self.setClasses();
-      self.highlightFirstItem();
+      if (!this.$element.prop('multiple')) {
+        self.highlightFirstItem();
+      }
     });
 
     container.on('unselect', function () {
